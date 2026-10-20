@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = {
+    "Name": ["Ali", "Bola", "Chidi", "Fatima", "John"],
+    "Score": [75, 82, 68, 90, 85]
+}
+
+df = pd.DataFrame(data)
+
+# Bar chart to compare individual scores
+plt.figure(figsize=(8, 5))
+plt.bar(df["Name"], df["Score"])
+plt.title("Students' Examination Scores")
+plt.xlabel("Student")
+plt.ylabel("Score")
+plt.show()
+
+# Histogram to examine score distribution
+sns.histplot(data=df, x="Score", bins=5)
+plt.title("Distribution of Examination Scores")
+plt.xlabel("Score")
+plt.ylabel("Frequency")
+plt.show()
